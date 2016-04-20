@@ -1,0 +1,10 @@
+c:\users\vlad\documents\visual studio 2015\Projects\Project.Code\Project.Code\bin\Debug\Project.Code.dll
+c:\users\vlad\documents\visual studio 2015\Projects\Project.Code\Project.Code\bin\Debug\Project.Code.pdb
+c:\users\vlad\documents\visual studio 2015\Projects\Project.Code\Project.Code\obj\Debug\Project.Code.csprojResolveAssemblyReference.cache
+c:\users\vlad\documents\visual studio 2015\Projects\Project.Code\Project.Code\obj\Debug\Project.Code.dll
+c:\users\vlad\documents\visual studio 2015\Projects\Project.Code\Project.Code\obj\Debug\Project.Code.pdb
+C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Project.App1\Project.Code\bin\Debug\Project.Code.dll
+C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Project.App1\Project.Code\bin\Debug\Project.Code.pdb
+C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Project.App1\Project.Code\obj\Debug\Project.Code.csprojResolveAssemblyReference.cache
+C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Project.App1\Project.Code\obj\Debug\Project.Code.dll
+C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Project.App1\Project.Code\obj\Debug\Project.Code.pdb
