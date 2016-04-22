@@ -24,15 +24,60 @@ namespace Project.App
                         Console.Write("You did not enter an applicable command, try again.\n");
                         break;
                     case 1:
-                        Student temp = new Student();
+                        Student newStudent = new Student();     //temporary storage for new students
+                        string testGpa;                         //before moving to StudentContainer?
+                        while (true)
+                        {
+                            Console.Write("First name: ");
+                            string testName = Console.ReadLine();
+                            if (Validation.TestName(testName))
+                            {
+                                newStudent.FirstName = testName;
+                                break;
+                            }
+                            else
+                                Console.Write("The name has to be at least 2 characters long.\n");
+                        }
+
+                        while (true)
+                        {
+                            Console.Write("Last name: ");
+                            string testName = Console.ReadLine();
+                            if (Validation.TestName(testName))
+                            {
+                                newStudent.LastName = testName;
+                                break;
+                            }
+                            else
+                                Console.Write("The name has to be at least 2 characters long.\n");
+                        }
+                        while(true)
+                        {
+                            Console.Write("GPA: ");
+                            testGpa = Console.ReadLine();
+                            if (Validation.TestGpa(testGpa))
+                            {
+                                newStudent.Gpa = float.Parse(testGpa, System.Globalization.CultureInfo.InvariantCulture);
+                                break;
+                            }
+                            else
+                            {
+                                Console.Write("Please enter a number.\n");
+                            }
+                        }
+
+                        Console.Write("Student " + newStudent.FirstName + ' ' + newStudent.LastName + " enlisted with ID: " + newStudent.Id + "\n");
+
+                        StudentContainer.AddStudent(newStudent);
                         break;
                     case 2:
+                        int i = 1;
                         if (Validation.TestDisplay())
                         {
-                            StudentContainer.students.Sort();
-                            for (int i = 0; i < StudentContainer.students.Count; i++)
+                            StudentContainer.SortStudents();
+                            foreach(Student student in StudentContainer.Students)
                             {
-                                Console.Write((i + 1) + ". " + StudentContainer.students[i] + "\n");
+                                Console.Write(i + ". " + student.LastName + ", " + student.FirstName + " - " + student.Gpa + "\n");
                             }
                             x = false;
                         }
@@ -41,9 +86,6 @@ namespace Project.App
                             Console.Write("There are no students to display, enlist some using the 'enlist' command.\n");
                         }
                         break;
-                        //case 3: //student removal case, not needed in level 1
-                        //    StudentContainer.removeStudent();
-                        //    break;
                 }
             }
             Console.Write("Hit the Esc key to exit.");

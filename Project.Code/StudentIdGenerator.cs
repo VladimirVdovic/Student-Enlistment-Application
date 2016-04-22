@@ -12,7 +12,7 @@ namespace Project.Code
         private static int studentId;
         private StudentIdGenerator()
         {
-            studentId = 1;
+            studentId = 0;
         }
         public static StudentIdGenerator Instance
         {
@@ -26,7 +26,7 @@ namespace Project.Code
             }
         }
 
-        public static int GenerateId()
+        public int GenerateId()
         {
             return studentId++;
         }

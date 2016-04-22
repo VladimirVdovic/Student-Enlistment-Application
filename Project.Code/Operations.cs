@@ -8,8 +8,7 @@ namespace Project.Code
 {
     public static class Operations
     {
-        public static string en = "enlist";
-        public static string di = "display";
-        //public static string re = "remove"; //used for student removal
+        public const string enlist = "enlist";
+        public const string display = "display";
     }
 }
