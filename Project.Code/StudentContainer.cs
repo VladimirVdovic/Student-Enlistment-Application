@@ -8,14 +8,25 @@ namespace Project.Code
 {
     public class StudentContainer
     {
-        public static List<string> students = new List<string>();
-        public static List<int> studentIds = new List<int>();
-        //public static string removeID; //used for the removeStudent() method
+        private static List<Student> students = new List<Student>();
 
-        public static void AddStudent(string surname, string name, float gpa, int id)
-        {   //this will store students and IDs, but IDs are not linked to students, so sorting wrecks it. Until sorted, IDs match students
-            students.Add(surname + ", " + name + " - " + gpa);
-            studentIds.Add(id);
+        public static List<Student> Students
+        {
+            get
+            {
+                return students;
+            }
+        }
+
+
+        public static void AddStudent(Student newStudent)
+        {
+            students.Add(newStudent);
+        }
+
+        public static void SortStudents()
+        {
+            students.Sort((x, y) => string.Compare(x.LastName, y.LastName));
         }
     }
 }
