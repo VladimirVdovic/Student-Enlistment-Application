@@ -9,23 +9,27 @@ namespace Project.Code
     public class Validation
     {
 
-        public static bool TestGpa(string gpa)
+        public static int TestGpa(string gpa)
         {
             float tryGpa;
             try
             {
                 tryGpa = float.Parse(gpa, System.Globalization.CultureInfo.InvariantCulture);
+                if (tryGpa >= 0 && tryGpa <= 4)
+                    return 0;
+                else
+                    return 1;
+                    
             }
             catch (FormatException)
             {
-                return false;
+                return 2;
             }
-            return true;
         }
 
         public static bool TestDisplay()
         {
-            if (StudentContainer.Students.Count > 0)
+            if (StudentContainer.Students.Any())
                 return true;
             else
                 return false;

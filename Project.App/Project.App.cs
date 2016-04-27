@@ -17,6 +17,7 @@ namespace Project.App
             {
                 Console.Write("Enter your command: ");
                 string operation = Console.ReadLine();
+                bool gpaEntry = true;
 
                 switch (Validation.TestOperation(operation))
                 {
@@ -26,9 +27,9 @@ namespace Project.App
                     case 1:
                         Student newStudent = new Student();     //temporary storage for new students
                         string testGpa;                         //before moving to StudentContainer?
+                        Console.Write("First name: ");
                         while (true)
                         {
-                            Console.Write("First name: ");
                             string testName = Console.ReadLine();
                             if (Validation.TestName(testName))
                             {
@@ -51,18 +52,22 @@ namespace Project.App
                             else
                                 Console.Write("The name has to be at least 2 characters long.\n");
                         }
-                        while(true)
+                        while (gpaEntry)
                         {
                             Console.Write("GPA: ");
                             testGpa = Console.ReadLine();
-                            if (Validation.TestGpa(testGpa))
+                            switch (Validation.TestGpa(testGpa))
                             {
-                                newStudent.Gpa = float.Parse(testGpa, System.Globalization.CultureInfo.InvariantCulture);
-                                break;
-                            }
-                            else
-                            {
-                                Console.Write("Please enter a number.\n");
+                                case 0:
+                                    gpaEntry = false;
+                                    newStudent.Gpa = float.Parse(testGpa, System.Globalization.CultureInfo.InvariantCulture);
+                                    break;
+                                case 1:
+                                    Console.Write("Not a valid number. GPA's range from 0 to 4.\n");
+                                    break;
+                                case 2:
+                                    Console.Write("Please only enter a number.\n");
+                                    break;
                             }
                         }
 
@@ -70,6 +75,7 @@ namespace Project.App
 
                         StudentContainer.AddStudent(newStudent);
                         break;
+
                     case 2:
                         int i = 1;
                         if (Validation.TestDisplay())
