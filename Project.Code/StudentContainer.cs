@@ -10,14 +10,13 @@ namespace Project.Code
     {
         private static List<Student> students = new List<Student>();
 
-        public static List<Student> Students
+        public static IEnumerable<Student> Students
         {
             get
             {
                 return students;
             }
         }
-
 
         public static void AddStudent(Student newStudent)
         {
