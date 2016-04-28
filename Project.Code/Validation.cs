@@ -55,5 +55,17 @@ namespace Project.Code
             else
                 return true;
         }
+
+        public static bool TestStudent(Student newStudent)
+        {
+            if (newStudent == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

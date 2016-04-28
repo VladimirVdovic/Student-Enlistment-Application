@@ -73,7 +73,14 @@ namespace Project.App
 
                         Console.Write("Student " + newStudent.FirstName + ' ' + newStudent.LastName + " enlisted with ID: " + newStudent.Id + "\n");
 
-                        StudentContainer.AddStudent(newStudent);
+                        if(Validation.TestStudent(newStudent))
+                        {
+                            StudentContainer.AddStudent(newStudent);
+                        }
+                        else
+                        {
+                            Console.Write("An error occured, no values for student information were registered.");
+                        }
                         break;
 
                     case 2:
@@ -84,6 +91,7 @@ namespace Project.App
                             foreach(Student student in StudentContainer.Students)
                             {
                                 Console.Write(i + ". " + student.LastName + ", " + student.FirstName + " - " + student.Gpa + "\n");
+                                i++;
                             }
                             x = false;
                         }
